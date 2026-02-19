@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjy6p80cnlyqe"]
+
+[ext_resource type="Texture2D" uid="uid://bbhe34xkjqfv8" path="res://sprites/button_a.png" id="1_btxdk"]
+[ext_resource type="Script" uid="uid://b0vaajuiqnxji" path="res://scenes/ui/button_display.gd" id="2_f1p3i"]
+
+[node name="ButtonDisplay" type="TextureRect"]
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("1_btxdk")
+stretch_mode = 3
+script = ExtResource("2_f1p3i")

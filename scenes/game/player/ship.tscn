@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq4d5vxiehoq5"]
+
+[ext_resource type="Script" uid="uid://m8xjukitiw75" path="res://scenes/game/player/ship.gd" id="1_w051d"]
+[ext_resource type="PackedScene" uid="uid://dcbwa14gqu2uh" path="res://scenes/game/player/player_bullet.tscn" id="2_ybm4t"]
+[ext_resource type="PackedScene" uid="uid://exrmovlrycc3" path="res://scenes/game/player/player_bomb.tscn" id="3_o1n40"]
+[ext_resource type="Texture2D" uid="uid://cl1d0kexd8myo" path="res://sprites/player/cooler_ship.png" id="4_o1n40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jgg0"]
+size = Vector2(2, 4)
+
+[node name="Ship" type="CharacterBody2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_w051d")
+focused_speed = 2.0
+unfocused_speed = 3.0
+fire_rate = 6
+radius_color = Color(1, 0.360784, 0.376471, 0.576471)
+charge_color = Color(0.890196, 0.811765, 0.329412, 0.647059)
+radius_line_rotation = 0.01
+charge_amount = 2
+bomb_charge_lower_bound = 10
+Bullet = ExtResource("2_ybm4t")
+Bomb = ExtResource("3_o1n40")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("4_o1n40")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_7jgg0")
+
+[node name="FrontSpawner" type="Marker2D" parent="."]
+position = Vector2(0, -16)
+rotation = 4.71239
+
+[node name="LeftSpawner" type="Marker2D" parent="."]
+position = Vector2(-11, -4)
+rotation = 4.62512
+
+[node name="RightSpawner" type="Marker2D" parent="."]
+position = Vector2(11, -4)
+rotation = 4.79966
