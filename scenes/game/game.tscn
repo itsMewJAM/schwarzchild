@@ -1,19 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd1sbukejk4g4"]
+[gd_scene format=3 uid="uid://dd1sbukejk4g4"]
 
-[ext_resource type="PackedScene" uid="uid://bq4d5vxiehoq5" path="res://scenes/game/player/ship.tscn" id="1_baw72"]
+[ext_resource type="PackedScene" uid="uid://bq4d5vxiehoq5" path="res://player/ship.tscn" id="1_baw72"]
 [ext_resource type="Script" uid="uid://7wwws3ehsrry" path="res://scenes/game/game.gd" id="1_vcr57"]
 [ext_resource type="PackedScene" uid="uid://cjy6p80cnlyqe" path="res://scenes/ui/button_display.tscn" id="3_juqqr"]
 [ext_resource type="Texture2D" uid="uid://dn4wawisesvd6" path="res://sprites/button_b.png" id="4_d20ku"]
 [ext_resource type="Texture2D" uid="uid://dyaeovb8qevmw" path="res://sprites/button_c.png" id="5_yfgms"]
 [ext_resource type="PackedScene" uid="uid://md26c4msfc81" path="res://scenes/game/enemy/enemy_bullet.tscn" id="7_87uf6"]
-[ext_resource type="PackedScene" uid="uid://dcbwa14gqu2uh" path="res://scenes/game/player/player_bullet.tscn" id="7_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://dcbwa14gqu2uh" path="res://player/player_bullet.tscn" id="7_bdhmt"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=682532378]
 script = ExtResource("1_vcr57")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1267208732]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=650797480]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,7 @@ offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ButtonDisplay" parent="CanvasLayer/Control" instance=ExtResource("3_juqqr")]
+[node name="ButtonDisplay" parent="CanvasLayer/Control" unique_id=1688964414 instance=ExtResource("3_juqqr")]
 layout_mode = 0
 offset_left = 186.0
 offset_top = 300.0
@@ -30,7 +30,7 @@ offset_right = 202.0
 offset_bottom = 316.0
 input_button = "game_button1"
 
-[node name="ButtonDisplay2" parent="CanvasLayer/Control" instance=ExtResource("3_juqqr")]
+[node name="ButtonDisplay2" parent="CanvasLayer/Control" unique_id=1123176380 instance=ExtResource("3_juqqr")]
 layout_mode = 0
 offset_left = 203.0
 offset_top = 300.0
@@ -39,7 +39,7 @@ offset_bottom = 316.0
 texture = ExtResource("4_d20ku")
 input_button = "game_button2"
 
-[node name="ButtonDisplay3" parent="CanvasLayer/Control" instance=ExtResource("3_juqqr")]
+[node name="ButtonDisplay3" parent="CanvasLayer/Control" unique_id=1543293515 instance=ExtResource("3_juqqr")]
 layout_mode = 0
 offset_left = 220.0
 offset_top = 300.0
@@ -48,16 +48,16 @@ offset_bottom = 316.0
 texture = ExtResource("5_yfgms")
 input_button = "game_button3"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1123531284]
 position = Vector2(60, 80)
 offset = Vector2(60, 80)
 
-[node name="Player" parent="." instance=ExtResource("1_baw72")]
+[node name="Player" parent="." unique_id=1804182876 instance=ExtResource("1_baw72")]
 position = Vector2(101, 181)
 
-[node name="PlayerBullet" parent="." instance=ExtResource("7_bdhmt")]
+[node name="PlayerBullet" parent="." unique_id=163272207 instance=ExtResource("7_bdhmt")]
 position = Vector2(118.325, 150)
 rotation = 0.863938
 
-[node name="EnemyBullet" parent="." instance=ExtResource("7_87uf6")]
+[node name="EnemyBullet" parent="." unique_id=311931090 instance=ExtResource("7_87uf6")]
 position = Vector2(92, 88)
